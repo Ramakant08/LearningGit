@@ -1,0 +1,12 @@
+public class MySub extends MySuper
+{
+  int getResult()
+  {
+    super.x = 5;
+    return x + 3;
+  }
+  public static void main(String[] args)
+  {
+    new MySub();
+  }
+}

@@ -1,0 +1,53 @@
+package com.constructors;
+
+public class SUubsequence {
+    
+	public static int Count(int n, int []a) {
+		int count=0;
+		if(n>2) {
+		for(int i=0;i<n;i++) {
+			for(int j=i+1;j<n;j++) {
+				for(int k=j+1;k<n;k++) {
+					if(((a[i]<a[j])&&(a[j]>a[k]))||((a[i]>a[j])&&(a[j]<a[k]))) {
+						count++;
+					}
+					if(a[i]!=a[j]) {
+						count++;
+					}
+					if(a[j]!=a[k]) {
+						count++;
+					}
+				}
+				
+			}
+		}
+		return count+n;
+	}
+		else if(n==1) {
+			count=1;
+			return count;
+		}
+		else {
+		       for(int i=0;i<2;i++) {
+		    	   if(a[i]!=a[i+1]) {
+		    		   count++;
+		    		}
+		       }
+		       return count+n;
+		}
+		
+		
+			
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+ 		 
+         int a[]= {2,1,3,2,3,3,1,3,1,2};
+         
+	System.out.println(	Count(4,a ));
+      
+	}
+
+}
